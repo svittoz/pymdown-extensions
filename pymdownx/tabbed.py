@@ -387,6 +387,8 @@ class TabbedTreeprocessor(Treeprocessor):
                         slug = toc.unique(slug, used_ids)
                         inpt.attrib["id"] = slug
                         label.attrib["for"] = slug
+                        if parent_slug and self.slugify:
+                            label.attrib["name"] = parent_slug
 
 
 class TabbedExtension(Extension):
