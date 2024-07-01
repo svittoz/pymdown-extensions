@@ -389,6 +389,8 @@ class TabbedTreeprocessor(Treeprocessor):
                         label.attrib["for"] = slug
                         if parent_slug and self.slugify:
                             inpt.attrib["name"] = parent_slug
+                        else:
+                            raise Exception(f"{inpt.attrib}, {parent_slug}")
 
 
 class TabbedExtension(Extension):
